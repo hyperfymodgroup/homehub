@@ -19,10 +19,10 @@ interface TimeZone {
 
 const TIMEZONES: TimeZone[] = [
   { name: 'UTC', label: 'UTC', offset: 0 },
-  { name: 'EDT', label: 'New York', offset: -3 },
-  { name: 'PDT', label: 'Los Angeles', offset: -3 },
+  { name: 'EDT', label: 'New York', offset: -4 },
+  { name: 'PDT', label: 'Los Angeles', offset: -8 },
   { name: 'GMT', label: 'London', offset: 1 },
-  { name: 'AEDT', label: 'Sydney', offset: 9 },
+  { name: 'AEDT', label: 'Sydney', offset: 11 },
 ];
 
 const TimeZoneDropdown = () => {
