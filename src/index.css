@@ -1,9 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap');
 
 @layer base {
   :root {
@@ -74,62 +74,62 @@
     @apply relative overflow-hidden rounded-md bg-cyber-darkgray border border-cyber-turquoise/30
            transition-all duration-300 backdrop-blur-sm;
   }
-  
+
   .cyber-card::before {
     content: '';
     @apply absolute inset-0 bg-gradient-to-br from-cyber-turquoise/10 to-transparent opacity-60;
   }
-  
+
   .cyber-card::after {
     content: '';
     @apply absolute bottom-0 left-0 h-1 bg-cyber-turquoise rounded-bl-md;
     width: 0%;
     transition: width 0.3s ease;
   }
-  
+
   .cyber-card:hover::after {
     width: 100%;
   }
-  
+
   .cyber-card:hover {
     @apply bg-cyber-darkgray border-cyber-turquoise/50 -translate-y-1 shadow-lg;
     box-shadow: 0 10px 20px -5px rgba(13, 231, 181, 0.3);
   }
-  
+
   .cyber-card:focus-visible {
     @apply outline-none ring-2 ring-cyber-turquoise/50 ring-offset-2 ring-offset-cyber-darkgray;
   }
-  
+
   .cyber-input {
     @apply bg-cyber-gray text-foreground border-cyber-turquoise/30 rounded-md
            focus:ring-cyber-turquoise/50 focus:border-cyber-turquoise/50 placeholder:text-foreground/50
            transition-all duration-200;
   }
-  
+
   .cyber-glitch {
     position: relative;
   }
-  
+
   .cyber-glitch::before, .cyber-glitch::after {
     content: attr(data-text);
     @apply absolute top-0 left-0 w-full h-full;
     clip: rect(44px, 450px, 56px, 0);
   }
-  
+
   .cyber-glitch::before {
     @apply text-cyber-turquoise;
     left: 2px;
     text-shadow: -1px 0 red;
     animation: cyber-glitch-anim 3s infinite linear alternate-reverse;
   }
-  
+
   .cyber-glitch::after {
     @apply text-cyber-pink;
     left: -2px;
     text-shadow: 1px 0 blue;
     animation: cyber-glitch-anim 2s infinite linear alternate-reverse;
   }
-  
+
   @keyframes cyber-glitch-anim {
     0% { clip: rect(31px, 9999px, 94px, 0); }
     10% { clip: rect(112px, 9999px, 76px, 0); }
@@ -143,32 +143,32 @@
     90% { clip: rect(10px, 9999px, 145px, 0); }
     100% { clip: rect(95px, 9999px, 37px, 0); }
   }
-  
+
   .scrollbar-none {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-  
+
   .scrollbar-none::-webkit-scrollbar {
     display: none;
   }
-  
+
   .cyber-button {
     @apply relative overflow-hidden bg-cyber-darkgray text-cyber-turquoise border border-cyber-turquoise/50
            px-4 py-2 rounded-md font-semibold transition-all duration-300 hover:bg-cyber-turquoise/10;
   }
-  
+
   .cyber-button::after {
     content: '';
     @apply absolute bottom-0 left-0 h-1 bg-cyber-turquoise;
     width: 0%;
     transition: width 0.2s ease;
   }
-  
+
   .cyber-button:hover::after {
     width: 100%;
   }
-  
+
   .cyber-button:focus-visible {
     @apply outline-none ring-2 ring-cyber-turquoise/50 ring-offset-2 ring-offset-cyber-darkgray;
   }
