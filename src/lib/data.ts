@@ -1,96 +1,102 @@
-
 export interface LinkCardData {
   id: string;
   title: string;
   description: string;
   url: string;
   icon?: string;
+  target: string;
   tags?: string[];
 }
 
 export const linkCards: LinkCardData[] = [
   {
-    id: "1",
-    title: "Neural Network Hub",
-    description: "Advanced AI research and development platform",
-    url: "https://example.com/neural",
-    tags: ["AI", "Research", "Development"]
+    id: "HyperLLM",
+    title: "HyperLLM",
+    description: "",
+    url: "https://llm.hyperfy.directory/",
+    icon: "",
+    target: "modal",
+    tags: ["HyperLLM", "LLM", "Hyperfy"]
   },
   {
-    id: "2",
-    title: "Quantum Vault",
-    description: "Secure digital asset storage and management",
-    url: "https://example.com/vault",
-    tags: ["Security", "Storage", "Encryption"]
+    id: "HyperCloud",
+    title: "HyperCloud",
+    description: "",
+    url: "https://cloud.hyperfy.directory/",
+    icon: "",
+    target: "modal",
+    tags: ["HyperCloud", "Cloud", "Hyperfy"]
   },
   {
-    id: "3",
-    title: "Cybernetic Forums",
-    description: "Community discussions on tech advancements",
-    url: "https://example.com/forums",
-    tags: ["Community", "Discussion", "Tech"]
+    id: "Hyperfy",
+    title: "Hyperfy",
+    description: "Mainpage",
+    url: "https://hyperfy.xyz/",
+    icon: "",
+    target: "modal",
+    tags: ["Hyperfy", "Mainpage", "Hyperfy"]
   },
   {
-    id: "4",
-    title: "Digital Marketplace",
-    description: "Buy and sell digital products and services",
-    url: "https://example.com/market",
-    tags: ["Commerce", "Digital", "Products"]
+    id: "HyperfyHow",
+    title: "Hyperfy.How",
+    description: "Docs",
+    url: "https://hyperfy.how/",
+    icon: "",
+    target: "modal",
+    tags: ["Hyperfy.How", "Docs", "Hyperfy"]
   },
   {
-    id: "5",
-    title: "Holographic Design Lab",
-    description: "Create immersive 3D experiences and designs",
-    url: "https://example.com/design",
-    tags: ["Design", "3D", "Creative"]
+    id: "HyperfyV1",
+    title: "Hyperfy V1",
+    description: "OG Version",
+    url: "https://hyperfy.io/",
+    icon: "",
+    target: "modal",
+    tags: ["Hyperfy V1", "OG Version", "Hyperfy"]
   },
   {
-    id: "6",
-    title: "Neon Documentation",
-    description: "Technical documentation and API references",
-    url: "https://example.com/docs",
-    tags: ["Documentation", "Technical", "Reference"]
+    id: "HyperWorldHost",
+    title: "HyperWorld Host",
+    description: "",
+    url: "https://hyperworld.host/",
+    icon: "",
+    target: "modal",
+    tags: ["HyperWorld Host", "Hosting", "Hyperfy"]
   },
   {
-    id: "7",
-    title: "CyberGuard Security",
-    description: "Advanced security monitoring and threat detection",
-    url: "https://example.com/security",
-    tags: ["Security", "Monitoring", "Protection"]
+    id: "TattedAlien",
+    title: "Tatted Alien",
+    description: "",
+    url: "https://tattedalien.club/",
+    icon: "",
+    target: "newtab",
+    tags: ["Tatted Alien", "World", "Hyperfy"]
   },
   {
-    id: "8",
-    title: "Virtual Reality Portal",
-    description: "Enter immersive virtual worlds and experiences",
-    url: "https://example.com/vr",
-    tags: ["VR", "Immersive", "Entertainment"]
+    id: "HowiesWorld",
+    title: "Howie's World",
+    description: "",
+    url: "Hyperfy.HowieDuhzit.Best",
+    icon: "",
+    target: "modal",
+    tags: ["Howie's World", "World", "Hyperfy"]
   },
   {
-    id: "9",
-    title: "Augmented Reality SDK",
-    description: "Development tools for AR applications",
-    url: "https://example.com/ar",
-    tags: ["AR", "Development", "Tools"]
+    id: "BogiesWorld",
+    title: "b0gie's World",
+    description: "",
+    url: "https://255242621.xyz/",
+    icon: "",
+    target: "modal",
+    tags: ["b0gie's World", "World", "Hyperfy"]
   },
   {
-    id: "10",
-    title: "Blockchain Explorer",
-    description: "Navigate and analyze blockchain networks",
-    url: "https://example.com/blockchain",
-    tags: ["Blockchain", "Analysis", "Cryptocurrency"]
+    id: "Peezy0mka",
+    title: "Solana Drama Haus",
+    description: "",
+    url: "https://solana.drama.haus/",
+    icon: "",
+    target: "modal",
+    tags: ["Peezy", "omka", "World", "Hyperfy"]
   },
-  {
-    id: "11",
-    title: "Neural Interface",
-    description: "Brain-computer interface research and applications",
-    url: "https://example.com/neural-interface",
-    tags: ["BCI", "Research", "Neuroscience"]
-  },
-  {
-    id: "12",
-    title: "Synthetic Biology Lab",
-    description: "Biological computing and synthetic organisms",
-    url: "https://example.com/synbio",
-    tags: ["Biology", "Computing", "Research"]
-  }
 ];

@@ -29,11 +29,11 @@ const SearchBar: React.FC<SearchBarProps> = ({ searchTerm, setSearchTerm, visibl
         onClose();
       }
     };
-    
+
     if (visible) {
       document.addEventListener('mousedown', handleClickOutside);
     }
-    
+
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
@@ -42,8 +42,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ searchTerm, setSearchTerm, visibl
   if (!visible) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/30 backdrop-blur-sm z-50 flex items-start justify-center pt-24 animate-fade-in">
-      <div 
+    <div className="fixed inset-0 bg-black/30 backdrop-blur-none z-50 flex items-start justify-center pt-24 animate-fade-in">
+      <div
         ref={containerRef}
         className="w-full max-w-xl mx-4 cyber-card p-1 border-cyber-turquoise/50 animate-fade-in"
         style={{ animationDelay: '50ms' }}
@@ -60,7 +60,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ searchTerm, setSearchTerm, visibl
             autoComplete="off"
           />
           {searchTerm && (
-            <button 
+            <button
               onClick={() => setSearchTerm('')}
               className="text-gray-400 hover:text-white transition-colors p-1"
             >

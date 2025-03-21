@@ -11,14 +11,14 @@ import CarbonLogoDiscord from '../components/icons/CarbonLogoDiscord';
 import CarbonLogoGithub from '../components/icons/CarbonLogoGithub';
 
 const Index = () => {
-  const { 
-    searchTerm, 
-    setSearchTerm, 
-    searchVisible, 
+  const {
+    searchTerm,
+    setSearchTerm,
+    searchVisible,
     setSearchVisible,
     toggleSearch,
     closeSearch,
-    filteredItems 
+    filteredItems
   } = useSearch(linkCards);
 
   // Ctrl+K hotkey for search
@@ -37,7 +37,7 @@ const Index = () => {
               ~/&nbsp;<span className="text-cyber-turquoise">hub</span>
             </h1>
           </div>
-          
+
           <div className="flex items-center gap-4">
             <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cyber-turquoise transition-colors">
               <CarbonLogoGithub className="w-5 h-5" />
@@ -46,7 +46,7 @@ const Index = () => {
               <CarbonLogoDiscord className="w-5 h-5" />
             </a>
             <TimeZoneDropdown />
-            <button 
+            <button
               onClick={toggleSearch}
               className="cyber-button flex items-center gap-2"
             >
@@ -61,7 +61,7 @@ const Index = () => {
       </header>
 
       {/* Search Overlay */}
-      <SearchBar 
+      <SearchBar
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
         visible={searchVisible}
@@ -71,8 +71,8 @@ const Index = () => {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4">
         <div className="py-6">
-          <h2 className="text-xl font-semibold text-white mb-6">Dashboard</h2>
-          
+          <h2 className="text-xl font-semibold text-white mb-6">Welcome ~/</h2>
+
           {/* Card Grid */}
           <CardGrid cards={filteredItems} />
         </div>
@@ -81,7 +81,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="max-w-7xl mx-auto px-4 py-6 text-center text-sm text-gray-500 mt-auto">
         <p>
-          <span className="text-cyber-turquoise">~/</span>hub &copy; {new Date().getFullYear()}
+          <span className="text-cyber-turquoise">~/</span>hub
         </p>
       </footer>
     </div>
