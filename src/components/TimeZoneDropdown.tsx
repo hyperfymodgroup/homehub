@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Clock } from 'lucide-react';
 import { format } from 'date-fns';
-import { 
+import {
   DropdownMenu,
   DropdownMenuTrigger,
   DropdownMenuContent,
@@ -19,10 +19,10 @@ interface TimeZone {
 
 const TIMEZONES: TimeZone[] = [
   { name: 'UTC', label: 'UTC', offset: 0 },
-  { name: 'EST', label: 'New York', offset: -4 },
-  { name: 'PST', label: 'Los Angeles', offset: -7 },
+  { name: 'EDT', label: 'New York', offset: -3 },
+  { name: 'PDT', label: 'Los Angeles', offset: -3 },
   { name: 'GMT', label: 'London', offset: 1 },
-  { name: 'AEST', label: 'Sydney', offset: 10 },
+  { name: 'AEDT', label: 'Sydney', offset: 9 },
 ];
 
 const TimeZoneDropdown = () => {
@@ -41,13 +41,13 @@ const TimeZoneDropdown = () => {
   const formatTimeForZone = (timeZone: TimeZone) => {
     // Create a new date with the timezone offset applied
     const date = new Date(currentTime);
-    
+
     // Get the UTC time
     const utcTime = date.getTime() + (date.getTimezoneOffset() * 60000);
-    
+
     // Create new date with the timezone offset
     const targetTime = new Date(utcTime + (timeZone.offset * 3600000));
-    
+
     return format(targetTime, 'HH:mm');
   };
 
@@ -57,14 +57,14 @@ const TimeZoneDropdown = () => {
         <Clock className="w-4 h-4" />
         <span className="font-mono text-sm">{selectedTimeZone.name} {formatTimeForZone(selectedTimeZone)}</span>
       </DropdownMenuTrigger>
-      
+
       <DropdownMenuContent className="bg-cyber-black border border-cyber-turquoise/30 w-56">
         <DropdownMenuLabel className="text-cyber-turquoise">Time Zones</DropdownMenuLabel>
         <DropdownMenuSeparator className="bg-cyber-turquoise/20" />
-        
+
         {TIMEZONES.map((timezone) => (
-          <DropdownMenuItem 
-            key={timezone.name} 
+          <DropdownMenuItem
+            key={timezone.name}
             className="flex justify-between text-gray-300 hover:text-white hover:bg-cyber-gray/50 cursor-default"
             onClick={() => setSelectedTimeZone(timezone)}
           >
