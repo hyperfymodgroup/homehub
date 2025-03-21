@@ -42,7 +42,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ searchTerm, setSearchTerm, visibl
   if (!visible) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-start justify-center pt-24 animate-fade-in">
+    <div className="fixed inset-0 bg-black/30 backdrop-blur-sm z-50 flex items-start justify-center pt-24 animate-fade-in">
       <div 
         ref={containerRef}
         className="w-full max-w-xl mx-4 cyber-card p-1 border-cyber-turquoise/50 animate-fade-in"
