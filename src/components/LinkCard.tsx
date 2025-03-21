@@ -1,22 +1,30 @@
-
 import React, { forwardRef } from 'react';
 import { LinkCardData } from '../lib/data';
 
 interface LinkCardProps {
   card: LinkCardData;
-  onClick: (card: LinkCardData) => void;
+  actionType: 'modal' | 'newTab'; // New prop to specify action type
+  onClick: (card: LinkCardData) => void; // Optional prop for modal action
 }
 
-const LinkCard = forwardRef<HTMLDivElement, LinkCardProps>(({ card, onClick }, ref) => {
+const LinkCard = forwardRef<HTMLDivElement, LinkCardProps>(({ card, actionType, onClick }, ref) => {
+  const handleClick = () => {
+    if (actionType === 'modal' && onClick) {
+      onClick(card);
+    } else if (actionType === 'newTab') {
+      window.open(card.url, '_blank', 'noopener,noreferrer');
+    }
+  };
+
   return (
-    <div 
+    <div
       ref={ref}
       className="cyber-card p-4 h-full flex flex-col justify-between group cursor-pointer"
-      onClick={() => onClick(card)}
+      onClick={handleClick}
       tabIndex={0}
       onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {
-          onClick(card);
+          handleClick();
         }
       }}
     >
