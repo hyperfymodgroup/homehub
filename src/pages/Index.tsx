@@ -1,12 +1,14 @@
 
 import React from 'react';
-import { Search, Cpu, Clock, Github, Discord } from 'lucide-react';
+import { Search, Cpu, Clock, Github } from 'lucide-react';
 import { useSearch } from '../lib/hooks/useSearch';
 import { useHotkeys } from '../lib/hooks/useHotkeys';
 import { linkCards } from '../lib/data';
 import SearchBar from '../components/SearchBar';
 import CardGrid from '../components/CardGrid';
 import TimeZoneDropdown from '../components/TimeZoneDropdown';
+import CarbonLogoDiscord from '../components/icons/CarbonLogoDiscord';
+import CarbonLogoGithub from '../components/icons/CarbonLogoGithub';
 
 const Index = () => {
   const { 
@@ -38,10 +40,10 @@ const Index = () => {
           
           <div className="flex items-center gap-4">
             <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cyber-turquoise transition-colors">
-              <Github className="w-5 h-5" />
+              <CarbonLogoGithub className="w-5 h-5" />
             </a>
             <a href="https://discord.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cyber-turquoise transition-colors">
-              <Discord className="w-5 h-5" />
+              <CarbonLogoDiscord className="w-5 h-5" />
             </a>
             <TimeZoneDropdown />
             <button 

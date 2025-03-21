@@ -4,17 +4,21 @@ import { LinkCardData } from '../lib/data';
 
 interface LinkCardProps {
   card: LinkCardData;
+  onClick: (card: LinkCardData) => void;
 }
 
-const LinkCard = forwardRef<HTMLAnchorElement, LinkCardProps>(({ card }, ref) => {
+const LinkCard = forwardRef<HTMLDivElement, LinkCardProps>(({ card, onClick }, ref) => {
   return (
-    <a 
-      href={card.url}
+    <div 
       ref={ref}
-      className="cyber-card p-4 h-full flex flex-col justify-between group"
-      target="_blank"
-      rel="noopener noreferrer"
+      className="cyber-card p-4 h-full flex flex-col justify-between group cursor-pointer"
+      onClick={() => onClick(card)}
       tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          onClick(card);
+        }
+      }}
     >
       <div className="z-10 relative">
         <h3 className="text-lg font-semibold text-white mb-1 group-hover:text-cyber-turquoise transition-colors duration-200">
@@ -24,7 +28,7 @@ const LinkCard = forwardRef<HTMLAnchorElement, LinkCardProps>(({ card }, ref) =>
           {card.description}
         </p>
       </div>
-    </a>
+    </div>
   );
 });
 

@@ -1,7 +1,8 @@
 
-import React, { useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { LinkCardData } from '../lib/data';
 import LinkCard from './LinkCard';
+import CardModal from './CardModal';
 import { useArrowNavigation } from '../lib/hooks/useHotkeys';
 
 interface CardGridProps {
@@ -10,9 +11,10 @@ interface CardGridProps {
 
 const CardGrid: React.FC<CardGridProps> = ({ cards }) => {
   const gridRef = useRef<HTMLDivElement>(null);
+  const [selectedCard, setSelectedCard] = useState<LinkCardData | null>(null);
 
   // Use arrow navigation
-  useArrowNavigation(gridRef, 'a.cyber-card', {
+  useArrowNavigation(gridRef, 'div.cyber-card', {
     onSelect: (element) => {
       // Trigger click on Enter key
       element.click();
@@ -30,21 +32,37 @@ const CardGrid: React.FC<CardGridProps> = ({ cards }) => {
     );
   }
 
+  const handleCardClick = (card: LinkCardData) => {
+    setSelectedCard(card);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedCard(null);
+  };
+
   return (
-    <div 
-      ref={gridRef}
-      className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 p-4"
-    >
-      {cards.map((card, index) => (
-        <div 
-          key={card.id} 
-          className="animate-fade-in"
-          style={{ animationDelay: `${index * 50}ms` }}
-        >
-          <LinkCard card={card} />
-        </div>
-      ))}
-    </div>
+    <>
+      <div 
+        ref={gridRef}
+        className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 p-4"
+      >
+        {cards.map((card, index) => (
+          <div 
+            key={card.id} 
+            className="animate-fade-in"
+            style={{ animationDelay: `${index * 50}ms` }}
+          >
+            <LinkCard card={card} onClick={handleCardClick} />
+          </div>
+        ))}
+      </div>
+
+      <CardModal 
+        card={selectedCard} 
+        isOpen={selectedCard !== null} 
+        onClose={handleCloseModal} 
+      />
+    </>
   );
 };
 
