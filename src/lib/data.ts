@@ -76,7 +76,7 @@ export const linkCards: LinkCardData[] = [
     id: "HowiesWorld",
     title: "Howie's World",
     description: "",
-    url: "Hyperfy.HowieDuhzit.Best",
+    url: "https://Hyperfy.HowieDuhzit.Best",
     icon: "",
     target: "modal",
     tags: ["Howie's World", "World", "Hyperfy"]
