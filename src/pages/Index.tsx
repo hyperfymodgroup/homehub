@@ -39,10 +39,10 @@ const Index = () => {
           </div>
 
           <div className="flex items-center gap-4">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cyber-turquoise transition-colors">
+            <a href="https://github.com/hyperfymodgroup" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cyber-turquoise transition-colors">
               <CarbonLogoGithub className="w-5 h-5" />
             </a>
-            <a href="https://discord.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cyber-turquoise transition-colors">
+            <a href="https://discord.gg/XFGmxsQv" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cyber-turquoise transition-colors">
               <CarbonLogoDiscord className="w-5 h-5" />
             </a>
             <TimeZoneDropdown />
