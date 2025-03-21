@@ -1,6 +1,6 @@
 
-import React, { useState } from 'react';
-import { Search, Cpu, Clock } from 'lucide-react';
+import React from 'react';
+import { Search, Cpu, Clock, Github, Discord } from 'lucide-react';
 import { useSearch } from '../lib/hooks/useSearch';
 import { useHotkeys } from '../lib/hooks/useHotkeys';
 import { linkCards } from '../lib/data';
@@ -37,6 +37,12 @@ const Index = () => {
           </div>
           
           <div className="flex items-center gap-4">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cyber-turquoise transition-colors">
+              <Github className="w-5 h-5" />
+            </a>
+            <a href="https://discord.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cyber-turquoise transition-colors">
+              <Discord className="w-5 h-5" />
+            </a>
             <TimeZoneDropdown />
             <button 
               onClick={toggleSearch}

@@ -27,6 +27,7 @@ const TIMEZONES: TimeZone[] = [
 
 const TimeZoneDropdown = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
+  const [selectedTimeZone, setSelectedTimeZone] = useState(TIMEZONES[0]);
 
   // Update time every minute
   useEffect(() => {
@@ -54,7 +55,7 @@ const TimeZoneDropdown = () => {
     <DropdownMenu>
       <DropdownMenuTrigger className="cyber-button-sm flex items-center gap-2">
         <Clock className="w-4 h-4" />
-        <span className="font-mono text-sm">{formatTimeForZone(TIMEZONES[0])}</span>
+        <span className="font-mono text-sm">{selectedTimeZone.name} {formatTimeForZone(selectedTimeZone)}</span>
       </DropdownMenuTrigger>
       
       <DropdownMenuContent className="bg-cyber-black border border-cyber-turquoise/30 w-56">
@@ -62,8 +63,12 @@ const TimeZoneDropdown = () => {
         <DropdownMenuSeparator className="bg-cyber-turquoise/20" />
         
         {TIMEZONES.map((timezone) => (
-          <DropdownMenuItem key={timezone.name} className="flex justify-between text-gray-300 hover:text-cyber-turquoise hover:bg-cyber-gray/30 cursor-default">
-            <span>{timezone.name} ({timezone.label})</span>
+          <DropdownMenuItem 
+            key={timezone.name} 
+            className="flex justify-between text-gray-300 hover:text-white hover:bg-cyber-gray/50 cursor-default"
+            onClick={() => setSelectedTimeZone(timezone)}
+          >
+            <span className={selectedTimeZone.name === timezone.name ? "text-cyber-pink" : ""}>{timezone.name} ({timezone.label})</span>
             <span className="font-mono text-cyber-turquoise">{formatTimeForZone(timezone)}</span>
           </DropdownMenuItem>
         ))}
