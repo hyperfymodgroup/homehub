@@ -22,7 +22,7 @@ const TIMEZONES: TimeZone[] = [
   { name: 'EDT', label: 'New York', offset: -4 },
   { name: 'CDT', label: 'Chicago', offset: -5 },
   { name: 'PDT', label: 'Los Angeles', offset: -8 },
-  { name: 'GMT', label: 'London', offset: 1 },
+  { name: 'GMT', label: 'London', offset: 0 },
   { name: 'AEDT', label: 'Sydney', offset: 11 },
 ];
 
